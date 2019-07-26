@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v xmlns:v xmlns:v xmlns:v>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<div id="app">
+    <!--{{name}}-->
+    <span v-text="name"></span>
+    <input type="text" v-model="num1" >+<input type="text"  v-model="num2">=
+    <span v-text="result"></span>
+    <!--{{Number.parseInt(num1)+Number.parseInt(num2)}}-->
+    <button v-on:click="change">计算</button>
+    <a v-bind:href="url">网址</a>
+    <a v-bind:href="url">百度</a>
+    <div v-bind:style="{ fontSize: size + 'px' }">javaEE培训</div>
+
+
+
+    <a v-bind:href="url">
+        <span v-text="name"></span>
+    </a>
+    <span v-text="name"></span>
+</div>
+
+</body>
+<script src="vue.min.js"></script>
+<script>
+    var vue = new Vue({
+        el:"#app",
+        data:{
+            name:"哈哈",
+            num1:0,
+            num2:0,
+            result:0,
+            url:"https://www.baidu.com/",
+            size:32
+
+        },
+        methods:{
+            change:function (){
+                this.result=Number.parseInt(this.num1)+Number.parseInt(this.num2)
+            }
+        }
+
+
+    });
+    var VM = new Vue({
+        el:'#app',//vm接管了app区域的管理
+        data:{//model数据
+            name:'黑马程序员',
+            num1:0,
+            num2:0,
+            result:0,
+            url:'http://www.itcast.cn',
+            size:11
+        },
+        methods:{
+            change:function () {
+                this.result = Number.parseInt(this.num1)+Number.parseInt(this.num2)
+                //alert("计算结果："+this.result)
+            }
+        }
+    });
+</script>
+</html>

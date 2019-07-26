@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v xmlns:v xmlns:v xmlns:v>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(item,index) in list":key="index">{{index}}--{{item}}</li>
+        <li v-for="(value,key) in user":key="key">{{key}}--{{value}}</li>
+        <!--<li v‐for="(item,index) in userlist" :key="item.user.uname">{{item.user.name}}--{{item.user.age}}-->
+
+            <li v-for="(item,index) in users":key="item.user.name">
+                <span v-if="item.user.name=='wangwu'" style="background:red">
+                    {{item.user.name}}--{{item.user.age}}
+                </span>
+                <span v-else="" >
+                    {{item.user.name}}--{{item.user.age}}
+                </span>
+
+            </li>
+
+
+
+    </ul>
+
+</div>
+
+</body>
+<script src="vue.min.js"></script>
+<script>
+    var vue = new Vue({
+        el:"#app",
+        data: {
+
+            list: [1, 2, 3, 4, 5],
+            user:{
+                name:"zhangsan",
+                age:19
+            },
+            users:[
+                {user:{name:"wangwu",age:23}},
+                {user:{name:"zhaoliu",age:12}}
+            ]
+        }
+
+    });
+
+
+</script>
+
+
+</html>
